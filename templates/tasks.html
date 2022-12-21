@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+ 
+{% block head %}
+<title>Task Manager</title>
+{% endblock %}
+ 
+{% block body %}
+<div class="fixed-top">
+    <div
+            class="bg-image"
+            style="
+              background-image: url('../static/vanGogh_Wheat_Field_with_Cypresses.jpg');
+              height: 100vh;
+              background-repeat: no-repeat;
+              background-size:100%;
+            ">
+    <div class="container">
+    <h1 class="text-center">Task Manager</h1>
+    <br>
+    <table>
+     <tr>
+        <div class="row">
+            <div class="col-sm-4"><strong>Tasks</strong></div>
+            <div class="col-sm-4"><strong>Added</strong></div>
+            <div class="col-sm-4"><strong>Actions</strong></div>
+          </div>
+     </tr>
+     {% for task in tasks %}
+         <tr>
+            <div class="row">
+                <div class="col-sm-4">{{ task.content }}</div>
+                <div class="col-sm-4">{{ task.data_created.date() }}</div>
+                <div class="col-sm-4 btn-group">
+                <a href="/delete/{{ task.id }}" class="btn btn-dark" role="button">Delete</a>
+                <br><br>
+                <a href="/update/{{ task.id }}" class="btn btn-light" role="button">Update</a></div>
+            </div>
+         </tr>
+         <br>
+     {% endfor %}
+     </table>
+     <form action="/tasks" method="POST">
+     <input type="text" name="content" id="content" class="form-control"><br>
+     <input type="submit" class="btn btn-primary" value="Add Task">
+     </form>
+    </div>
+    </div>
+{% endblock %}

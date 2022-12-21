@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Task Manager</title>
+{% endblock %}
+{% block body %}
+<body>
+    <body class="masthead">
+        <div class="fixed-top">
+            <div
+            class="bg-image"
+            style="
+              background-image: url('../static/2728px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg');
+              height: 100vh;
+              background-repeat: no-repeat;
+              background-size:100%;
+            ">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Task Manager</h1>
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white font-weight-bold mb-5">It's website where you can create your to-do list!</p>
+                    <a class="btn btn-primary btn-xl" href="/tasks">Create your tasks</a>
+                </div>
+            </div>
+       </div>
+        </div>
+        </div>
+    </body>
+</body>
+{% endblock %}
